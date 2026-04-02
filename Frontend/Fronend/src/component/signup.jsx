@@ -17,17 +17,19 @@ function Signup() {
       return false;
     } else if (Data.password !== Data.confirmPassword) {
       setError("Passwords do not match.");
+      setData({name:"", password: "", confirmPassword: "" });
       return false;
     } else {
       setError("");
       return true;
     }
   }
-    const Senddata = async (formData) => {
-      const response = await fetch("http://localhost:3000/signup", {
+    const Senddata = async () => {
+      const response = await
+        fetch("http://localhost:5000/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: formData.name, password: formData.password }),
+        body: JSON.stringify({ name: Data.name, password: Data.password, confirm: Data.confirmPassword }),
       })
       const data = await response.json();
       console.log(data);
@@ -36,8 +38,9 @@ function Signup() {
       e.preventDefault();
       if (!validateForm()) return;
       
+      Senddata();
       setData({ name: "", password: "", confirmPassword: "" });
-      Senddata(Data);
+      
     }
     const navigate = useNavigate();
     return (
