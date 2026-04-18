@@ -1,5 +1,5 @@
 import express from "express";
-import Sales from "../shema/sales.js";
+import Sales from "../SOLUP/myFolder/shema/sales.js";
 import jwt from "jsonwebtoken";
 
 const router = express.Router();
