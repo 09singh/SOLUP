@@ -1,5 +1,5 @@
 import express from "express";
-import User from "../routes/model.js"
+import User from "./model.js"
 const router = express.Router();
 
 router.post("/signup", async (req, res) => {
@@ -10,6 +10,7 @@ router.post("/signup", async (req, res) => {
             name: name,
             passwoard: password
         })
+        console.log("New user created:", newUser);
         await newUser.save();
 
         res.json({

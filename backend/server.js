@@ -1,9 +1,12 @@
 import express from "express";
+import cors from "cors";
 import authRouter from "./routes/authRoute.js";
 import authRouter2 from "./routes/authRoute2.js";
 import model from "./routes/model.js"
 import mongoose from "mongoose";
 const app = express();
+app.use(cors());
+
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "http://localhost:5173");
