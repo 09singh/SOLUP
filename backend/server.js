@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 //mongos
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("connecteddb"))
     .catch((err) => console.log(err));
 
@@ -40,6 +40,8 @@ app.use(authRouter);
 app.use(authRouter2);
 app.use(sales);
 // app.use(aichat);
-app.listen(5000, () => {
-    console.log("Server running on port 5000");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
