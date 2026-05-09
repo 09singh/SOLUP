@@ -2,12 +2,13 @@ import express from "express";
 import cors from "cors";
 import authRouter from "./routes/authRoute.js";
 import authRouter2 from "./routes/authRoute2.js";
-import model from "./routes/model.js"
+import model from "./shema/model.js";
 import mongoose from "mongoose";
+import sales from "./routes/sales.js";
+import aichat from "./routes/aichat.js";
+
 const app = express();
 app.use(cors());
-
-
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "http://localhost:5173");
     res.header("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
@@ -34,12 +35,11 @@ app.get("/", (req, res) => {
     });
 });
 
-app.get("/.well-known/appspecific/com.chrome.devtools.json", (req, res) => {
-    res.status(204).end();
-});
 
 app.use(authRouter);
 app.use(authRouter2);
+app.use(sales);
+app.use(aichat);
 app.listen(5000, () => {
     console.log("Server running on port 5000");
 });

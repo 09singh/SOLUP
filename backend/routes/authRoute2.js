@@ -1,5 +1,5 @@
 import express from "express";
-import User from "./model.js"
+import User from "../shema/model.js";
 const router = express.Router();
 
 router.post("/signup", async (req, res) => {
