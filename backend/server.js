@@ -5,7 +5,7 @@ import authRouter2 from "./routes/authRoute2.js";
 import model from "./shema/model.js";
 import mongoose from "mongoose";
 import sales from "./routes/sales.js";
-import aichat from "./routes/aichat.js";
+// import aichat from "./routes/aichat.js";
 
 const app = express();
 app.use(cors());
@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 //mongos
-mongoose.connect("mongodb+srv://singhsanket745_db_user:CiojGbuJh5GtGAkS@cluster0.ftbcudd.mongodb.net/?appName=Cluster0")
+mongoose.connect(process.env.MONGODB_URI)
     .then(() => console.log("connecteddb"))
     .catch((err) => console.log(err));
 
@@ -39,7 +39,7 @@ app.get("/", (req, res) => {
 app.use(authRouter);
 app.use(authRouter2);
 app.use(sales);
-app.use(aichat);
+// app.use(aichat);
 app.listen(5000, () => {
     console.log("Server running on port 5000");
 });
