@@ -5,8 +5,9 @@ import authRouter2 from "./routes/authRoute2.js";
 import model from "./shema/model.js";
 import mongoose from "mongoose";
 import sales from "./routes/sales.js";
+import dotenv from "dotenv";
 // import aichat from "./routes/aichat.js";
-
+dotenv.config();
 const app = express();
 app.use(cors());
 app.use((req, res, next) => {
