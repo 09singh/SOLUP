@@ -2,7 +2,6 @@ import express from "express";
 import cors from "cors";
 import authRouter from "./routes/authRoute.js";
 import authRouter2 from "./routes/authRoute2.js";
-import model from "./shema/model.js";
 import mongoose from "mongoose";
 import sales from "./routes/sales.js";
 import dotenv from "dotenv";
