@@ -9,8 +9,8 @@ router.post("/login", async (req, res) => {
     const { name, password } = req.body;
 
       const user = await User.findOne({ name: name.trim() });
-      console.log("Entered password:", password);
-console.log("Database password:", user.passwoard);
+   
+
     if (!user) {
       return res.json({
         success: false,
@@ -24,6 +24,8 @@ console.log("Database password:", user.passwoard);
         message: "Invalid password provided",
       });
     }
+       console.log("Entered password:", password);
+    console.log("Database password:", user.passwoard);
  const token = jwt.sign({userId: user._id}, JWT_SECRET, {expiresIn: "1h"});
     res.json({
       success: true,
