@@ -25,7 +25,7 @@ router.post("/login", async (req, res) => {
       });
     }
        console.log("Entered password:", password);
-    console.log("Database password:", user.passwoard);
+    console.log("Database password:", user.password);
  const token = jwt.sign({userId: user._id}, JWT_SECRET, {expiresIn: "1h"});
     res.json({
       success: true,

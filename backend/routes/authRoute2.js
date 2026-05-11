@@ -4,9 +4,9 @@ const router = express.Router();
 
 router.post("/signup", async (req, res) => {
 
-  const { name, password, confirmpassword } = req.body;
+  const { name, passwoard, confirmpassword } = req.body;
 
-  if(password !== confirmpassword){
+  if(passwoard !== confirmpassword){
     return res.status(400).json({
       message:"Passwords do not match"
     })
@@ -16,7 +16,7 @@ router.post("/signup", async (req, res) => {
 
     const newUser = new User({
       name,
-      password
+     passwoard
     });
 
     await newUser.save();
