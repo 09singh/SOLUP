@@ -257,44 +257,6 @@ Users can export data in multiple formats.
 │      MongoDB      │
 └───────────────────┘
 ```
-
----
-
-# 📸 Screenshots
-
-## Dashboard
-
-![Dashboard](./screenshots/dashboard.png)
-
----
-
-## HR Management
-
-![HR Management](./screenshots/hr-management.png)
-
----
-
-## Inventory Management
-
-![Inventory Management](./screenshots/inventory.png)
-
----
-
-## Sales Management
-
-![Sales Management](./screenshots/sales.png)
-
----
-## Purchase Management
-
-![Purchase Management](./screenshots/purchase.png)
-
----
-
-## Reports & Analytics
-
-![Reports & Analytics](./screenshots/analytics.png)
-
 ---
 
 # 📂 Project Structure
