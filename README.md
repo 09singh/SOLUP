@@ -2,7 +2,7 @@
 
 > A comprehensive ERP solution designed specifically for Micro, Small, and Medium Enterprises (MSMEs) to manage business operations, inventory, sales, purchasing, HR processes, and business analytics from a single platform.
 
-![ERP Banner](./screenshots/banner.png)
+![ERP Banner](https://flowbit-solup.netlify.app/)
 
 ---
 
